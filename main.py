@@ -19,13 +19,19 @@ pygame.mixer.init()
 
 # Load sound files for each segment (replace 'noteX.wav' with actual sound file paths)
 segment_sounds = [
-    pygame.mixer.Sound('music/314819__modularsamples__yamaha-cs-30l-space-bass-c4-space-bass-60-127.wav'),
-    pygame.mixer.Sound('music/314820__modularsamples__yamaha-cs-30l-space-bass-c4-space-bass-61-127.wav'),
-    pygame.mixer.Sound('music/314822__modularsamples__yamaha-cs-30l-space-bass-d4-space-bass-63-127.wav'),
-    pygame.mixer.Sound('music/314825__modularsamples__yamaha-cs-30l-space-bass-f4-space-bass-67-127.wav'),
-    pygame.mixer.Sound('music/314826__modularsamples__yamaha-cs-30l-space-bass-g4-space-bass-68-127.wav'),
-    pygame.mixer.Sound('music/314827__modularsamples__yamaha-cs-30l-space-bass-a4-space-bass-69-127.wav'),
-    pygame.mixer.Sound('music/314822__modularsamples__yamaha-cs-30l-space-bass-d4-space-bass-63-127.wav'),  # Duplicate
+    pygame.mixer.Sound('music/314867__modularsamples__yamaha-cs-30l-straight-guitar-c5-straight-guitar-72-127.wav'),
+    # pygame.mixer.Sound('music/314868__modularsamples__yamaha-cs-30l-straight-guitar-c5-straight-guitar-73-127.wav'),
+    pygame.mixer.Sound('music/314869__modularsamples__yamaha-cs-30l-straight-guitar-d5-straight-guitar-74-127.wav'),
+    # pygame.mixer.Sound('music/314870__modularsamples__yamaha-cs-30l-straight-guitar-d5-straight-guitar-75-127.wav'),
+    pygame.mixer.Sound('music/314871__modularsamples__yamaha-cs-30l-straight-guitar-e5-straight-guitar-76-127.wav'),
+    # pygame.mixer.Sound('music/314872__modularsamples__yamaha-cs-30l-straight-guitar-e5-straight-guitar-77-127.wav'),
+    # pygame.mixer.Sound('music/314873__modularsamples__yamaha-cs-30l-straight-guitar-f5-straight-guitar-78-127.wav'),
+    pygame.mixer.Sound('music/314874__modularsamples__yamaha-cs-30l-straight-guitar-f5-straight-guitar-79-127.wav'),
+    # pygame.mixer.Sound('music/314875__modularsamples__yamaha-cs-30l-straight-guitar-g5-straight-guitar-80-127.wav'),
+    pygame.mixer.Sound('music/314876__modularsamples__yamaha-cs-30l-straight-guitar-a5-straight-guitar-81-127.wav'),
+    pygame.mixer.Sound('music/314877__modularsamples__yamaha-cs-30l-straight-guitar-a5-straight-guitar-82-127.wav'),
+    # pygame.mixer.Sound('music/314878__modularsamples__yamaha-cs-30l-straight-guitar-b5-straight-guitar-83-127.wav'),
+    pygame.mixer.Sound('music/314879__modularsamples__yamaha-cs-30l-straight-guitar-c6-straight-guitar-84-127.wav'),
 ]
 
 # Ball settings
@@ -46,18 +52,31 @@ inner_radius = 190           # Inner radius to keep it circular
 num_segments = len(segment_sounds)  # Number of segments in the ring
 
 color_palette = [
-    (210, 253, 255),
-    (193, 241, 243),
-    (193, 213, 243),
-    (227, 238, 255),
-    (243, 227, 255),
-    (234, 209, 253),
-    (251, 209, 253),
-    (64, 24, 75),
-    (106, 79, 135),
-    (119, 107, 171),
-    (129, 66, 113),
-    (83, 96, 122),
+    (247, 160, 200),
+    (239, 152, 200),
+    (255, 205, 191),
+    (220, 139, 197),
+    (255, 213, 196),
+    (119, 95, 173),
+    (255, 186, 196),
+    (255, 200, 192),
+    (168, 118, 187),
+    (243, 174, 195),
+    (113, 91, 164),
+    (255, 164, 201),
+    (255, 191, 194),
+    (212, 136, 195),
+    (255, 218, 187),
+    (255, 215, 188),
+    (255, 182, 197),
+    (255, 196, 193),
+    (203, 132, 194),
+    (118, 98, 177),
+    (243, 167, 197),
+    (255, 225, 186),
+    (150, 111, 183),
+    (134, 105, 180),
+    (245, 184, 193),
 ]
 
 last_color = (0, 0, 0)
