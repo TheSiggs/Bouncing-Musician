@@ -52,14 +52,17 @@ segment_colors = [
     (243, 227, 255),
     (234, 209, 253),
     (251, 209, 253),
+
+    # 40184b 	(64,24,75)
+    # 6a4f87 	(106,79,135)
+    # 776bab 	(119,107,171)
+    # 814271 	(129,66,113)
+    # 53607a 	(83,96,122)
 ]
 
 rotation_angle = 0  # Rotation angle for the segments
 rotation_speed = 0.5  # Speed of rotation, adjust for faster/slower rotation
 
-# Function to generate a truly random color
-def random_color():
-    return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
 # Function to draw a filled segmented circle with rotation
 def draw_rotating_segmented_circle(surface, center, outer_radius, inner_radius, num_segments, colors, rotation_angle):
@@ -68,7 +71,7 @@ def draw_rotating_segmented_circle(surface, center, outer_radius, inner_radius, 
         # Calculate start and end angles for the segment, adjusted by rotation
         start_angle = math.radians(i * angle_per_segment + rotation_angle)
         end_angle = math.radians((i + 1) * angle_per_segment + rotation_angle)
-        
+
         # Calculate the points for the segment as a quadrilateral
         points = [
             (center[0] + inner_radius * math.cos(start_angle), center[1] + inner_radius * math.sin(start_angle)),
@@ -76,9 +79,10 @@ def draw_rotating_segmented_circle(surface, center, outer_radius, inner_radius, 
             (center[0] + outer_radius * math.cos(end_angle), center[1] + outer_radius * math.sin(end_angle)),
             (center[0] + inner_radius * math.cos(end_angle), center[1] + inner_radius * math.sin(end_angle))
         ]
-        
+
         # Draw the filled polygon segment
         pygame.draw.polygon(surface, colors[i], points)
+
 
 # Main loop
 while True:
@@ -115,7 +119,7 @@ while True:
 
         # Determine which segment was hit
         segment_index = int(collision_angle // (360 / num_segments))
-        segment_colors[segment_index] = random_color()  # Change to a truly random color
+        segment_colors[segment_index] = random.choice(segment_colors)
 
         # Play the sound associated with the collided segment
         segment_sounds[segment_index].play(maxtime=500)
@@ -140,4 +144,3 @@ while True:
 
     # Add a small delay to slow down the loop
     pygame.time.delay(10)
-
