@@ -44,7 +44,8 @@ big_bounce_speed = -10.0     # Speed for the big bounce
 ring_radius = 200            # Radius for the ring boundary
 inner_radius = 190           # Inner radius to keep it circular
 num_segments = len(segment_sounds)  # Number of segments in the ring
-segment_colors = [
+
+color_palette = [
     (210, 253, 255),
     (193, 241, 243),
     (193, 213, 243),
@@ -52,14 +53,15 @@ segment_colors = [
     (243, 227, 255),
     (234, 209, 253),
     (251, 209, 253),
-
-    # 40184b 	(64,24,75)
-    # 6a4f87 	(106,79,135)
-    # 776bab 	(119,107,171)
-    # 814271 	(129,66,113)
-    # 53607a 	(83,96,122)
+    (64, 24, 75),
+    (106, 79, 135),
+    (119, 107, 171),
+    (129, 66, 113),
+    (83, 96, 122),
 ]
 
+last_color = (0, 0, 0)
+segment_colors = color_palette
 rotation_angle = 0  # Rotation angle for the segments
 rotation_speed = 0.5  # Speed of rotation, adjust for faster/slower rotation
 
@@ -82,6 +84,16 @@ def draw_rotating_segmented_circle(surface, center, outer_radius, inner_radius, 
 
         # Draw the filled polygon segment
         pygame.draw.polygon(surface, colors[i], points)
+
+
+def random_color():
+    color = random.choice(color_palette)
+    if color != last_color:
+        return color
+    last_color_index = color_palette.index(color)
+    if last_color_index + 1 > len(color_palette):
+        return color_palette[0]
+    return color_palette[last_color_index + 1]
 
 
 # Main loop
@@ -119,7 +131,8 @@ while True:
 
         # Determine which segment was hit
         segment_index = int(collision_angle // (360 / num_segments))
-        segment_colors[segment_index] = random.choice(segment_colors)
+        last_color = random_color()
+        segment_colors[segment_index] = last_color
 
         # Play the sound associated with the collided segment
         segment_sounds[segment_index].play(maxtime=500)
