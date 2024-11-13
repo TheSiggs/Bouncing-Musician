@@ -12,7 +12,7 @@ canvas_height = 720
 
 # Create the screen directly with canvas dimensions
 screen = pygame.display.set_mode((canvas_width, canvas_height))
-pygame.display.set_caption("Bouncing Ball with Segment Sounds")
+pygame.display.set_caption("Rotating Segmented Circle with Sounds")
 
 # Initialize the mixer for sound playback
 pygame.mixer.init()
@@ -54,17 +54,20 @@ segment_colors = [
     (251, 209, 253),
 ]
 
+rotation_angle = 0  # Rotation angle for the segments
+rotation_speed = 0.5  # Speed of rotation, adjust for faster/slower rotation
+
 # Function to generate a truly random color
 def random_color():
     return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
-# Function to draw a filled segmented circle without gaps
-def draw_filled_segmented_circle(surface, center, outer_radius, inner_radius, num_segments, colors):
+# Function to draw a filled segmented circle with rotation
+def draw_rotating_segmented_circle(surface, center, outer_radius, inner_radius, num_segments, colors, rotation_angle):
     angle_per_segment = 360 / num_segments
     for i in range(num_segments):
-        # Calculate start and end angles for the segment
-        start_angle = math.radians(i * angle_per_segment)
-        end_angle = math.radians((i + 1) * angle_per_segment)
+        # Calculate start and end angles for the segment, adjusted by rotation
+        start_angle = math.radians(i * angle_per_segment + rotation_angle)
+        end_angle = math.radians((i + 1) * angle_per_segment + rotation_angle)
         
         # Calculate the points for the segment as a quadrilateral
         points = [
@@ -88,9 +91,12 @@ while True:
     # Fill the screen with a black background
     screen.fill((0, 0, 0))
 
-    # Draw the filled segmented circle without gaps
+    # Update the rotation angle
+    rotation_angle = (rotation_angle + rotation_speed) % 360
+
+    # Draw the rotating segmented circle
     ring_center = (canvas_width // 2, canvas_height // 2)
-    draw_filled_segmented_circle(screen, ring_center, ring_radius, inner_radius, num_segments, segment_colors)
+    draw_rotating_segmented_circle(screen, ring_center, ring_radius, inner_radius, num_segments, segment_colors, rotation_angle)
 
     # Apply gravity to the ball's vertical speed
     ball_speed_y += gravity
@@ -105,7 +111,7 @@ while True:
         # Calculate the angle of collision from the center of the ring to the ball
         dx = ball_x - ring_center[0]
         dy = ball_y - ring_center[1]
-        collision_angle = (math.degrees(math.atan2(dy, dx)) + 360) % 360  # Normalize angle to 0-360
+        collision_angle = (math.degrees(math.atan2(dy, dx)) - rotation_angle + 360) % 360  # Adjust for rotation
 
         # Determine which segment was hit
         segment_index = int(collision_angle // (360 / num_segments))
