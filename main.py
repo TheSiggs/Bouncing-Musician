@@ -48,14 +48,13 @@ pygame.mixer.init()
 themes = {
     "mystic": {
         "sounds": [
-
-            pygame.mixer.Sound('music/314863__modularsamples__yamaha-cs-30l-straight-guitar-g4-straight-guitar-68-127.wav'),
-            pygame.mixer.Sound('music/314864__modularsamples__yamaha-cs-30l-straight-guitar-a4-straight-guitar-69-127.wav'),
-            pygame.mixer.Sound('music/314866__modularsamples__yamaha-cs-30l-straight-guitar-b4-straight-guitar-71-127.wav'),
-            pygame.mixer.Sound('music/314856__modularsamples__yamaha-cs-30l-straight-guitar-c4-straight-guitar-61-127.wav'),
-            pygame.mixer.Sound('music/314859__modularsamples__yamaha-cs-30l-straight-guitar-e4-straight-guitar-64-127.wav'),
-            pygame.mixer.Sound('music/314861__modularsamples__yamaha-cs-30l-straight-guitar-f4-straight-guitar-66-127.wav'),
-            pygame.mixer.Sound('music/314875__modularsamples__yamaha-cs-30l-straight-guitar-g5-straight-guitar-80-127.wav'),
+            # pygame.mixer.Sound('music/314863__modularsamples__yamaha-cs-30l-straight-guitar-g4-straight-guitar-68-127.wav'),
+            # pygame.mixer.Sound('music/314864__modularsamples__yamaha-cs-30l-straight-guitar-a4-straight-guitar-69-127.wav'),
+            # pygame.mixer.Sound('music/314866__modularsamples__yamaha-cs-30l-straight-guitar-b4-straight-guitar-71-127.wav'),
+            # pygame.mixer.Sound('music/314856__modularsamples__yamaha-cs-30l-straight-guitar-c4-straight-guitar-61-127.wav'),
+            # pygame.mixer.Sound('music/314859__modularsamples__yamaha-cs-30l-straight-guitar-e4-straight-guitar-64-127.wav'),
+            # pygame.mixer.Sound('music/314861__modularsamples__yamaha-cs-30l-straight-guitar-f4-straight-guitar-66-127.wav'),
+            # pygame.mixer.Sound('music/314875__modularsamples__yamaha-cs-30l-straight-guitar-g5-straight-guitar-80-127.wav'),
 
             pygame.mixer.Sound('music/314867__modularsamples__yamaha-cs-30l-straight-guitar-c5-straight-guitar-72-127.wav'),
             pygame.mixer.Sound('music/314869__modularsamples__yamaha-cs-30l-straight-guitar-d5-straight-guitar-74-127.wav'),
@@ -95,12 +94,12 @@ themes = {
     },
     "chinese": {
         "sounds": [
-            pygame.mixer.Sound('music/314863__modularsamples__yamaha-cs-30l-straight-guitar-g4-straight-guitar-68-127.wav'),
-            pygame.mixer.Sound('music/314866__modularsamples__yamaha-cs-30l-straight-guitar-b4-straight-guitar-71-127.wav'),
-            pygame.mixer.Sound('music/314856__modularsamples__yamaha-cs-30l-straight-guitar-c4-straight-guitar-61-127.wav'),
-            pygame.mixer.Sound('music/314857__modularsamples__yamaha-cs-30l-straight-guitar-d4-straight-guitar-62-127.wav'),
-            pygame.mixer.Sound('music/314862__modularsamples__yamaha-cs-30l-straight-guitar-f4-straight-guitar-67-127.wav'),
-            pygame.mixer.Sound('music/314875__modularsamples__yamaha-cs-30l-straight-guitar-g5-straight-guitar-80-127.wav'),
+            # pygame.mixer.Sound('music/314863__modularsamples__yamaha-cs-30l-straight-guitar-g4-straight-guitar-68-127.wav'),
+            # pygame.mixer.Sound('music/314866__modularsamples__yamaha-cs-30l-straight-guitar-b4-straight-guitar-71-127.wav'),
+            # pygame.mixer.Sound('music/314856__modularsamples__yamaha-cs-30l-straight-guitar-c4-straight-guitar-61-127.wav'),
+            # pygame.mixer.Sound('music/314857__modularsamples__yamaha-cs-30l-straight-guitar-d4-straight-guitar-62-127.wav'),
+            # pygame.mixer.Sound('music/314862__modularsamples__yamaha-cs-30l-straight-guitar-f4-straight-guitar-67-127.wav'),
+            # pygame.mixer.Sound('music/314875__modularsamples__yamaha-cs-30l-straight-guitar-g5-straight-guitar-80-127.wav'),
 
             pygame.mixer.Sound('music/314867__modularsamples__yamaha-cs-30l-straight-guitar-c5-straight-guitar-72-127.wav'),
             pygame.mixer.Sound('music/314871__modularsamples__yamaha-cs-30l-straight-guitar-e5-straight-guitar-76-127.wav'),
