@@ -5,6 +5,9 @@ import random
 import math
 import time
 
+
+ENV = "prod"
+
 # Initialize pygame
 pygame.init()
 
@@ -40,7 +43,10 @@ rotation_angle = 0  # Rotation angle for the segments
 rotation_speed = 0.5  # Speed of rotation, adjust for faster/slower rotation
 
 last_time = time.time()  # Record the starting time
-interval = 10  # Interval in seconds
+if ENV == "test":
+    interval = 1  # Interval in seconds
+else:
+    interval = 60  # Interval in seconds
 
 font = pygame.font.Font(None, 36)  # You can replace None with a font path
 
@@ -86,11 +92,20 @@ def load_themes():
     return themes
 
 
+def new_theme(themes):
+    if ENV == "test":
+        for element in themes:
+            yield element
+    else:
+        while True:  # Infinite generator
+            yield random.choice(themes)
+
+
 # initial startup
 themes = load_themes()
-theme_list = list(themes.keys())
-print(theme_list)
-theme = random.choice(theme_list)
+theme_generator = new_theme(list(themes.keys()))
+
+theme = next(theme_generator)
 current_theme = theme
 theme = themes[theme]
 segment_sounds = theme["sounds"]
@@ -113,13 +128,8 @@ while True:
     # Get the current time
     current_time = time.time()
 
-    # Check if 60 seconds have passed
     if current_time - last_time >= interval:
-        # Perform the random choice action
-        themes = load_themes()
-        theme_list = list(themes.keys())
-        theme_list.remove(current_theme)
-        theme = random.choice(theme_list)
+        theme = next(theme_generator)
         current_theme = theme
         print(f"switching to theme {theme}")
         theme = themes[theme]
@@ -189,4 +199,5 @@ while True:
     pygame.display.flip()
 
     # Add a small delay to slow down the loop
-    pygame.time.delay(10)
+    if ENV != "test":
+        pygame.time.delay(10)
