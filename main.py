@@ -1,4 +1,5 @@
 import pygame
+import json
 import sys
 import random
 import math
@@ -17,165 +18,6 @@ pygame.display.set_caption("Bouncing Music")
 
 # Initialize the mixer for sound playback
 pygame.mixer.init()
-
-# Music
-# pygame.mixer.Sound('music/314855__modularsamples__yamaha-cs-30l-straight-guitar-c4-straight-guitar-60-127.wav'),
-# pygame.mixer.Sound('music/314856__modularsamples__yamaha-cs-30l-straight-guitar-c4-straight-guitar-61-127.wav'),
-# pygame.mixer.Sound('music/314857__modularsamples__yamaha-cs-30l-straight-guitar-d4-straight-guitar-62-127.wav'),
-# pygame.mixer.Sound('music/314858__modularsamples__yamaha-cs-30l-straight-guitar-d4-straight-guitar-63-127.wav'),
-# pygame.mixer.Sound('music/314859__modularsamples__yamaha-cs-30l-straight-guitar-e4-straight-guitar-64-127.wav'),
-# pygame.mixer.Sound('music/314860__modularsamples__yamaha-cs-30l-straight-guitar-e4-straight-guitar-65-127.wav'),
-# pygame.mixer.Sound('music/314861__modularsamples__yamaha-cs-30l-straight-guitar-f4-straight-guitar-66-127.wav'),
-# pygame.mixer.Sound('music/314862__modularsamples__yamaha-cs-30l-straight-guitar-f4-straight-guitar-67-127.wav'),
-# pygame.mixer.Sound('music/314863__modularsamples__yamaha-cs-30l-straight-guitar-g4-straight-guitar-68-127.wav'),
-# pygame.mixer.Sound('music/314864__modularsamples__yamaha-cs-30l-straight-guitar-a4-straight-guitar-69-127.wav'),
-# pygame.mixer.Sound('music/314865__modularsamples__yamaha-cs-30l-straight-guitar-a4-straight-guitar-70-127.wav'),
-# pygame.mixer.Sound('music/314866__modularsamples__yamaha-cs-30l-straight-guitar-b4-straight-guitar-71-127.wav'),
-# pygame.mixer.Sound('music/314867__modularsamples__yamaha-cs-30l-straight-guitar-c5-straight-guitar-72-127.wav'),
-# pygame.mixer.Sound('music/314868__modularsamples__yamaha-cs-30l-straight-guitar-c5-straight-guitar-73-127.wav'),
-# pygame.mixer.Sound('music/314869__modularsamples__yamaha-cs-30l-straight-guitar-d5-straight-guitar-74-127.wav'),
-# pygame.mixer.Sound('music/314870__modularsamples__yamaha-cs-30l-straight-guitar-d5-straight-guitar-75-127.wav'),
-# pygame.mixer.Sound('music/314871__modularsamples__yamaha-cs-30l-straight-guitar-e5-straight-guitar-76-127.wav'),
-# pygame.mixer.Sound('music/314872__modularsamples__yamaha-cs-30l-straight-guitar-e5-straight-guitar-77-127.wav'),
-# pygame.mixer.Sound('music/314873__modularsamples__yamaha-cs-30l-straight-guitar-f5-straight-guitar-78-127.wav'),
-# pygame.mixer.Sound('music/314874__modularsamples__yamaha-cs-30l-straight-guitar-f5-straight-guitar-79-127.wav'),
-# pygame.mixer.Sound('music/314875__modularsamples__yamaha-cs-30l-straight-guitar-g5-straight-guitar-80-127.wav'),
-# pygame.mixer.Sound('music/314876__modularsamples__yamaha-cs-30l-straight-guitar-a5-straight-guitar-81-127.wav'),
-# pygame.mixer.Sound('music/314877__modularsamples__yamaha-cs-30l-straight-guitar-a5-straight-guitar-82-127.wav'),
-# pygame.mixer.Sound('music/314878__modularsamples__yamaha-cs-30l-straight-guitar-b5-straight-guitar-83-127.wav'),
-# pygame.mixer.Sound('music/314879__modularsamples__yamaha-cs-30l-straight-guitar-c6-straight-guitar-84-127.wav'),
-
-themes = {
-    "Prometheus_4": {
-        "sounds": [
-            pygame.mixer.Sound('music/314863__modularsamples__yamaha-cs-30l-straight-guitar-g4-straight-guitar-68-127.wav'),
-            pygame.mixer.Sound('music/314864__modularsamples__yamaha-cs-30l-straight-guitar-a4-straight-guitar-69-127.wav'),
-            pygame.mixer.Sound('music/314866__modularsamples__yamaha-cs-30l-straight-guitar-b4-straight-guitar-71-127.wav'),
-            pygame.mixer.Sound('music/314856__modularsamples__yamaha-cs-30l-straight-guitar-c4-straight-guitar-61-127.wav'),
-            pygame.mixer.Sound('music/314859__modularsamples__yamaha-cs-30l-straight-guitar-e4-straight-guitar-64-127.wav'),
-            pygame.mixer.Sound('music/314861__modularsamples__yamaha-cs-30l-straight-guitar-f4-straight-guitar-66-127.wav'),
-            pygame.mixer.Sound('music/314875__modularsamples__yamaha-cs-30l-straight-guitar-g5-straight-guitar-80-127.wav'),
-        ],
-        "color_palette": [
-            (247, 160, 200),
-            (239, 152, 200),
-            (255, 205, 191),
-            (220, 139, 197),
-            (255, 213, 196),
-            (119, 95, 173),
-            (255, 186, 196),
-            (255, 200, 192),
-            (168, 118, 187),
-            (243, 174, 195),
-            (113, 91, 164),
-            (255, 164, 201),
-            (255, 191, 194),
-            (212, 136, 195),
-            (255, 218, 187),
-            (255, 215, 188),
-            (255, 182, 197),
-            (255, 196, 193),
-            (203, 132, 194),
-            (118, 98, 177),
-            (243, 167, 197),
-            (255, 225, 186),
-            (150, 111, 183),
-            (134, 105, 180),
-            (245, 184, 193),
-        ]
-    },
-    "Prometheus_5": {
-        "sounds": [
-            pygame.mixer.Sound('music/314867__modularsamples__yamaha-cs-30l-straight-guitar-c5-straight-guitar-72-127.wav'),
-            pygame.mixer.Sound('music/314869__modularsamples__yamaha-cs-30l-straight-guitar-d5-straight-guitar-74-127.wav'),
-            pygame.mixer.Sound('music/314871__modularsamples__yamaha-cs-30l-straight-guitar-e5-straight-guitar-76-127.wav'),
-            pygame.mixer.Sound('music/314874__modularsamples__yamaha-cs-30l-straight-guitar-f5-straight-guitar-79-127.wav'),
-            pygame.mixer.Sound('music/314876__modularsamples__yamaha-cs-30l-straight-guitar-a5-straight-guitar-81-127.wav'),
-            pygame.mixer.Sound('music/314877__modularsamples__yamaha-cs-30l-straight-guitar-a5-straight-guitar-82-127.wav'),
-            pygame.mixer.Sound('music/314879__modularsamples__yamaha-cs-30l-straight-guitar-c6-straight-guitar-84-127.wav'),
-        ],
-        "color_palette": [
-            (247, 160, 200),
-            (239, 152, 200),
-            (255, 205, 191),
-            (220, 139, 197),
-            (255, 213, 196),
-            (119, 95, 173),
-            (255, 186, 196),
-            (255, 200, 192),
-            (168, 118, 187),
-            (243, 174, 195),
-            (113, 91, 164),
-            (255, 164, 201),
-            (255, 191, 194),
-            (212, 136, 195),
-            (255, 218, 187),
-            (255, 215, 188),
-            (255, 182, 197),
-            (255, 196, 193),
-            (203, 132, 194),
-            (118, 98, 177),
-            (243, 167, 197),
-            (255, 225, 186),
-            (150, 111, 183),
-            (134, 105, 180),
-            (245, 184, 193),
-        ]
-    },
-    "Chinese_4": {
-        "sounds": [
-            pygame.mixer.Sound('music/314863__modularsamples__yamaha-cs-30l-straight-guitar-g4-straight-guitar-68-127.wav'),
-            pygame.mixer.Sound('music/314866__modularsamples__yamaha-cs-30l-straight-guitar-b4-straight-guitar-71-127.wav'),
-            pygame.mixer.Sound('music/314856__modularsamples__yamaha-cs-30l-straight-guitar-c4-straight-guitar-61-127.wav'),
-            pygame.mixer.Sound('music/314857__modularsamples__yamaha-cs-30l-straight-guitar-d4-straight-guitar-62-127.wav'),
-            pygame.mixer.Sound('music/314862__modularsamples__yamaha-cs-30l-straight-guitar-f4-straight-guitar-67-127.wav'),
-            pygame.mixer.Sound('music/314875__modularsamples__yamaha-cs-30l-straight-guitar-g5-straight-guitar-80-127.wav'),
-        ],
-        "color_palette": [
-            (48, 48, 49),
-            (124, 68, 64),
-            (129, 123, 115),
-            (236, 60, 53),
-            (86, 58, 55),
-            (161, 82, 77),
-            (234, 230, 217),
-            (61, 70, 78),
-            (90, 87, 82),
-            (244, 162, 64),
-            (170, 183, 197),
-            (233, 160, 186),
-            (144, 148, 173),
-            (93, 100, 115),
-        ],
-    },
-    "Chinese_5": {
-        "sounds": [
-            pygame.mixer.Sound('music/314867__modularsamples__yamaha-cs-30l-straight-guitar-c5-straight-guitar-72-127.wav'),
-            pygame.mixer.Sound('music/314871__modularsamples__yamaha-cs-30l-straight-guitar-e5-straight-guitar-76-127.wav'),
-            pygame.mixer.Sound('music/314873__modularsamples__yamaha-cs-30l-straight-guitar-f5-straight-guitar-78-127.wav'),
-            pygame.mixer.Sound('music/314875__modularsamples__yamaha-cs-30l-straight-guitar-g5-straight-guitar-80-127.wav'),
-            pygame.mixer.Sound('music/314878__modularsamples__yamaha-cs-30l-straight-guitar-b5-straight-guitar-83-127.wav'),
-            pygame.mixer.Sound('music/314879__modularsamples__yamaha-cs-30l-straight-guitar-c6-straight-guitar-84-127.wav'),
-        ],
-        "color_palette": [
-            (48, 48, 49),
-            (124, 68, 64),
-            (129, 123, 115),
-            (236, 60, 53),
-            (86, 58, 55),
-            (161, 82, 77),
-            (234, 230, 217),
-            (61, 70, 78),
-            (90, 87, 82),
-            (244, 162, 64),
-            (170, 183, 197),
-            (233, 160, 186),
-            (144, 148, 173),
-            (93, 100, 115),
-        ],
-    },
-}
-
 
 # Ball settings
 ball_radius = 20
@@ -234,7 +76,18 @@ def random_color():
     return color_palette[last_color_index + 1]
 
 
+def load_themes():
+    with open('themes.json', 'r') as file:
+        themes = json.load(file)
+
+    for theme in themes.values():
+        theme['sounds'] = [pygame.mixer.Sound(sound_path) for sound_path in theme['sounds']]
+
+    return themes
+
+
 # initial startup
+themes = load_themes()
 theme_list = list(themes.keys())
 print(theme_list)
 theme = random.choice(theme_list)
@@ -263,6 +116,7 @@ while True:
     # Check if 60 seconds have passed
     if current_time - last_time >= interval:
         # Perform the random choice action
+        themes = load_themes()
         theme_list = list(themes.keys())
         theme_list.remove(current_theme)
         theme = random.choice(theme_list)
