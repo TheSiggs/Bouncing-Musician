@@ -22,6 +22,8 @@ pkgs.mkShell {
     fi
 
     echo "Virtual environment activated with pygame installed."
+
+    exec zsh
   '';
 }
 
