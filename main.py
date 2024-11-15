@@ -44,6 +44,7 @@ interval = 10  # Interval in seconds
 
 font = pygame.font.Font(None, 36)  # You can replace None with a font path
 
+
 # Function to draw a filled segmented circle with rotation
 def draw_rotating_segmented_circle(surface, center, outer_radius, inner_radius, num_segments, colors, rotation_angle):
     angle_per_segment = 360 / num_segments
@@ -71,7 +72,7 @@ def random_color():
     last_color_index = color_palette.index(color)
     if last_color_index + 1 > len(color_palette):
         return color_palette[0]
-    return color_palette[last_color_index + 1]
+    return color_palette[last_color_index]
 
 
 def load_themes():
@@ -79,8 +80,7 @@ def load_themes():
         themes = json.load(file)
 
     for theme in themes.values():
-        if len(theme["sounds"]) > len(theme["color_palette"]):
-            raise Error("Not enough colors")
+        assert len(theme["sounds"]) <= len(theme["color_palette"]), f'{theme["name"]} has more notes than colours: colors: {len(theme["color_palette"])} notes: {len(theme["sounds"])}'
         theme['sounds'] = [pygame.mixer.Sound(sound_path) for sound_path in theme['sounds']]
 
     return themes

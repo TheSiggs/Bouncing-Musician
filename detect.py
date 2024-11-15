@@ -3,6 +3,8 @@ import soundfile as sf
 import os
 
 # Generate pitch-shifted audio for a range of notes
+
+
 def generate_pitch_shifted_notes(input_file, output_dir, octaves, sample_rate=44100):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -37,7 +39,8 @@ def generate_pitch_shifted_notes(input_file, output_dir, octaves, sample_rate=44
         except Exception as e:
             print(f"Error processing shift {shift}: {e}")
 
+
 # Example usage
-output_dir = 'notes'  # Replace with your desired output directory
+output_dir = 'notes'
 input_file = 'music/314865__modularsamples__yamaha-cs-30l-straight-guitar-a4-straight-guitar-70-127.wav'  # Replace with your input file
 generate_pitch_shifted_notes(input_file, output_dir, octaves=[4, 5, 6])
