@@ -1,93 +1,210 @@
 {
-    "Prometheus": {
-        "name": "Prometheus",
+    "Algerian Scale": {
+        "name": "Algerian Scale",
+        "sounds": [
+            "notes/A4.wav",
+            "notes/A#4.wav",
+            "notes/C4.wav",
+            "notes/D#4.wav",
+            "notes/E4.wav",
+            "notes/F4.wav",
+            "notes/G4.wav",
+            "notes/A5.wav"
+        ],
+        "color_palette": [
+            [194, 153, 107],
+            [255, 210, 90],
+            [87, 79, 113],
+            [125, 173, 230],
+            [173, 142, 123],
+            [92, 174, 164],
+            [213, 128, 72],
+            [247, 186, 121]
+        ]
+    },
+    "Arabic Scale": {
+        "name": "Arabic Scale",
+        "sounds": [
+            "notes/A4.wav",
+            "notes/B4.wav",
+            "notes/C#4.wav",
+            "notes/D4.wav",
+            "notes/E4.wav",
+            "notes/F#4.wav",
+            "notes/G4.wav",
+            "notes/A5.wav"
+        ],
+        "color_palette": [
+            [142, 108, 197],
+            [205, 104, 57],
+            [54, 160, 121],
+            [101, 94, 186],
+            [240, 159, 123],
+            [76, 115, 149],
+            [193, 92, 119],
+            [219, 181, 103]
+        ]
+    },
+    "Augmented Scale": {
+        "name": "Augmented Scale",
+        "sounds": [
+            "notes/C4.wav",
+            "notes/E4.wav",
+            "notes/G#4.wav",
+            "notes/C5.wav",
+            "notes/E5.wav",
+            "notes/G#5.wav"
+        ],
+        "color_palette": [
+            [123, 189, 147],
+            [234, 112, 84],
+            [88, 73, 134],
+            [161, 203, 101],
+            [244, 132, 127],
+            [192, 110, 145]
+        ]
+    },
+    "Balinese Scale": {
+        "name": "Balinese Scale",
+        "sounds": [
+            "notes/D4.wav",
+            "notes/D#4.wav",
+            "notes/G4.wav",
+            "notes/G#4.wav",
+            "notes/A#4.wav"
+        ],
+        "color_palette": [
+            [108, 140, 218],
+            [221, 116, 83],
+            [255, 193, 94],
+            [101, 166, 153],
+            [230, 151, 167]
+        ]
+    },
+    "Byzantine Scale": {
+        "name": "Byzantine Scale",
+        "sounds": [
+            "notes/E4.wav",
+            "notes/F4.wav",
+            "notes/G#4.wav",
+            "notes/A4.wav",
+            "notes/B4.wav",
+            "notes/C4.wav",
+            "notes/D4.wav",
+            "notes/E5.wav"
+        ],
+        "color_palette": [
+            [120, 101, 149],
+            [239, 112, 95],
+            [162, 197, 135],
+            [191, 86, 69],
+            [132, 99, 117],
+            [213, 144, 83],
+            [87, 139, 185],
+            [207, 177, 98]
+        ]
+    },
+    "Chinese Scale": {
+        "name": "Chinese Scale",
         "sounds": [
             "notes/C4.wav",
             "notes/D4.wav",
             "notes/E4.wav",
-            "notes/F#4.wav",
-            "notes/A4.wav",
-            "notes/A#4.wav",
-            "notes/C5.wav"
+            "notes/G4.wav",
+            "notes/A4.wav"
         ],
         "color_palette": [
-            [247, 160, 200],
-            [239, 152, 200],
-            [255, 205, 191],
-            [220, 139, 197],
-            [255, 213, 196],
-            [119, 95, 173],
-            [255, 186, 196],
-            [255, 200, 192],
-            [168, 118, 187],
-            [243, 174, 195],
-            [113, 91, 164],
-            [255, 164, 201],
-            [255, 191, 194],
-            [212, 136, 195],
-            [255, 218, 187],
-            [255, 215, 188],
-            [255, 182, 197],
-            [255, 196, 193],
-            [203, 132, 194],
-            [118, 98, 177],
-            [243, 167, 197],
-            [255, 225, 186],
-            [150, 111, 183],
-            [134, 105, 180],
-            [245, 184, 193]
+            [97, 125, 205],
+            [230, 89, 102],
+            [194, 173, 112],
+            [76, 138, 197],
+            [244, 157, 96]
         ]
     },
-    "Chinese": {
-        "name": "Chinese",
+    "Diminished Scale": {
+        "name": "Diminished Scale",
         "sounds": [
             "notes/C4.wav",
+            "notes/D4.wav",
+            "notes/D#4.wav",
+            "notes/F4.wav",
+            "notes/F#4.wav",
+            "notes/G#4.wav",
+            "notes/A4.wav",
+            "notes/B4.wav"
+        ],
+        "color_palette": [
+            [192, 147, 103],
+            [100, 179, 158],
+            [211, 102, 144],
+            [84, 113, 156],
+            [230, 164, 97],
+            [114, 153, 203],
+            [243, 176, 116],
+            [197, 98, 117]
+        ]
+    },
+    "Dominant Diminished Scale": {
+        "name": "Dominant Diminished Scale",
+        "sounds": [
+            "notes/C4.wav",
+            "notes/D4.wav",
+            "notes/D#4.wav",
             "notes/E4.wav",
             "notes/F#4.wav",
             "notes/G4.wav",
-            "notes/B4.wav",
-            "notes/C5.wav"
+            "notes/A4.wav",
+            "notes/A#4.wav"
         ],
         "color_palette": [
-            [48, 48, 49],
-            [124, 68, 64],
-            [129, 123, 115],
-            [236, 60, 53],
-            [86, 58, 55],
-            [161, 82, 77],
-            [234, 230, 217],
-            [61, 70, 78],
-            [90, 87, 82],
-            [244, 162, 64],
-            [170, 183, 197],
-            [233, 160, 186],
-            [144, 148, 173],
-            [93, 100, 115]
+            [180, 135, 145],
+            [154, 197, 113],
+            [226, 101, 99],
+            [75, 144, 189],
+            [248, 161, 122],
+            [173, 103, 214],
+            [99, 136, 201],
+            [240, 178, 95]
         ]
     },
-    "Oriental": {
-        "name": "Oriental",
+    "Egyptian Scale": {
+        "name": "Egyptian Scale",
+        "sounds": [
+            "notes/C4.wav",
+            "notes/D4.wav",
+            "notes/F4.wav",
+            "notes/G4.wav",
+            "notes/A#4.wav"
+        ],
+        "color_palette": [
+            [91, 172, 124],
+            [255, 203, 104],
+            [232, 106, 87],
+            [123, 86, 192],
+            [201, 182, 138]
+        ]
+    },
+    "Eight Tone Spanish Scale": {
+        "name": "Eight Tone Spanish Scale",
         "sounds": [
             "notes/C4.wav",
             "notes/C#4.wav",
             "notes/E4.wav",
             "notes/F4.wav",
-            "notes/F#4.wav",
+            "notes/G4.wav",
+            "notes/G#4.wav",
             "notes/A4.wav",
-            "notes/A#4.wav",
-            "notes/C5.wav"
+            "notes/B4.wav"
         ],
         "color_palette": [
-            [83, 62, 48],
-            [210, 172, 112],
-            [228, 209, 174],
-            [81, 125, 61],
-            [144, 194, 70],
-            [83, 62, 48],
-            [210, 172, 112],
-            [228, 209, 174],
-            [81, 125, 61],
-            [144, 194, 70]
+            [240, 139, 103],
+            [132, 187, 109],
+            [252, 172, 90],
+            [94, 112, 164],
+            [211, 125, 144],
+            [83, 157, 201],
+            [197, 85, 117],
+            [189, 147, 112]
         ]
     }
 }
