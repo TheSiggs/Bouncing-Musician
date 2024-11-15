@@ -2,7 +2,7 @@
 
 pkgs.mkShell {
   buildInputs = with pkgs; [
-    (python312.withPackages (ps: [ ps.pygame ]))
+    (python312.withPackages (ps: [ ps.pygame ps.librosa ps.numpy]))
     glib
     SDL2
     SDL2_mixer

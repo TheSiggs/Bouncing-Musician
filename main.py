@@ -40,7 +40,7 @@ rotation_angle = 0  # Rotation angle for the segments
 rotation_speed = 0.5  # Speed of rotation, adjust for faster/slower rotation
 
 last_time = time.time()  # Record the starting time
-interval = 60  # Interval in seconds
+interval = 10  # Interval in seconds
 
 font = pygame.font.Font(None, 36)  # You can replace None with a font path
 
@@ -128,7 +128,7 @@ while True:
         color_palette = theme["color_palette"]
         num_segments = len(theme["sounds"])
 
-        text = current_theme.split("_")[0]
+        text = theme["name"]
         text_surface = font.render(text, True, (255, 255, 255))
         text_rect = text_surface.get_rect(center=(canvas_width // 2, text_surface.get_height() // 2))
 
