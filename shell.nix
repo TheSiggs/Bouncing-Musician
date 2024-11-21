@@ -6,6 +6,7 @@ pkgs.mkShell {
     glib
     SDL2
     SDL2_mixer
+    obs-studio
   ];
 
   shellHook = ''
